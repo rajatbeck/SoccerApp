@@ -118,6 +118,9 @@ ext {
 
     dagger = "com.google.dagger:dagger:$versions.dagger"
     daggerCompiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+    daggerAndorid = "com.google.dagger:dagger-android-support:$versions.dagger"
+    daggerAndroidCompiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+
 
     butterKnife = "com.jakewharton:butterknife:$versions.butterKnife"
     butterKnifeCompiler = "com.jakewharton:butterknife-compiler:$versions.butterKnife"
@@ -130,11 +133,11 @@ ext {
     supportLibs = supportDeps.values()
     networkLibs = retrofit.values() + okHttp.values() + moshi.values()
     rxJavaLibs = rxJava.values()
-    otherLibs = [butterKnife, timber, dagger, glide]
+    otherLibs = [butterKnife, timber, dagger, glide,daggerAndorid]
 
     debugLibs = onlyDebug.values() + leakCannary
     releaseLibs = onlyRelease.values() + leakCannary
-    annotationProcessorLibs = [butterKnifeCompiler, daggerCompiler, glideCompiler ]
+    annotationProcessorLibs = [butterKnifeCompiler, daggerCompiler, glideCompiler,daggerAndroidCompiler ]
 
     unitTestLibs = unitTest.values() + leakCannary
     androidTestsLibs = androidTests.values() + supportLibs

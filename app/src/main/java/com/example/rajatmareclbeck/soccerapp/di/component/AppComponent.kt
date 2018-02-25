@@ -7,11 +7,16 @@ import dagger.android.DaggerApplication
 import javax.inject.Singleton
 import dagger.BindsInstance
 import android.app.Application
+import com.example.rajatmareclbeck.soccerapp.Flavour
 import com.example.rajatmareclbeck.soccerapp.di.module.AppModule
+import com.example.rajatmareclbeck.soccerapp.di.module.NetModule
 
 
 @Singleton
-@Component(modules = arrayOf(AndroidInjectionModule::class,
+@Component(modules = arrayOf(
+        AndroidInjectionModule::class,
+        Flavour::class,
+        NetModule::class,
         AppModule::class))
 interface AppComponent : AndroidInjector<DaggerApplication> {
 

@@ -8,17 +8,28 @@ import javax.inject.Singleton
 import dagger.BindsInstance
 import android.app.Application
 import com.example.rajatmareclbeck.soccerapp.Flavour
+import com.example.rajatmareclbeck.soccerapp.SoccerApplication
+import com.example.rajatmareclbeck.soccerapp.di.module.ActivityModule
 import com.example.rajatmareclbeck.soccerapp.di.module.AppModule
+import com.example.rajatmareclbeck.soccerapp.di.module.FragmentModule
 import com.example.rajatmareclbeck.soccerapp.di.module.NetModule
+import dagger.android.support.AndroidSupportInjectionModule
 
 
 @Singleton
 @Component(modules = arrayOf(
-        AndroidInjectionModule::class,
+        ActivityModule::class,
+        FragmentModule::class,
+        AppModule::class,
         Flavour::class,
         NetModule::class,
-        AppModule::class))
+        AndroidSupportInjectionModule::class,
+        AndroidInjectionModule::class
+))
 interface AppComponent : AndroidInjector<DaggerApplication> {
+
+
+    fun inject(application: SoccerApplication)
 
 
     override fun inject(instance: DaggerApplication)

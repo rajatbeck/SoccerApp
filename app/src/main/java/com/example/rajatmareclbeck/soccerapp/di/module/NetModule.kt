@@ -30,10 +30,10 @@ class NetModule{
 
     @Provides
     @Singleton
-    internal fun provideRetrofit(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit =
+    internal fun provideRetrofit(okHttpClient: OkHttpClient.Builder, moshi: Moshi): Retrofit =
             Retrofit.Builder()
                     .baseUrl(getBaseUrl())
-                    .client(okHttpClient)
+                    .client(okHttpClient.build())
                     .addConverterFactory(MoshiConverterFactory.create(moshi))
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build()

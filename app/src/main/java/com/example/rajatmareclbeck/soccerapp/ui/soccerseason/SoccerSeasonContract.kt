@@ -11,8 +11,6 @@ interface SoccerSeasonContract{
 
         fun getSoccerSeasons()
 
-
-
     }
 
     interface View:BaseView<Presenter>{

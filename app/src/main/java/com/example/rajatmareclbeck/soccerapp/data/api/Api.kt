@@ -15,6 +15,6 @@ interface Api {
 //    /teams/{id}/fixtures/
 //    /teams/{id}
 
-    @GET("/soccerseasons/")
+    @GET("/v1/competitions/")
     fun getSoccerSeasons(): Single<List<SoccerSeason>>
 }
